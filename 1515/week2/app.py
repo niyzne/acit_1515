@@ -1,13 +1,8 @@
-younger_brother_age = 19
-older_sister_age = 20
+# This program figures out your age
+current_year = 2026
 
-print(younger_brother_age + older_sister_age)
+# print simply prints something
+print("Tell me your birth year: ")
 
-# numbers are written with no quotes
-
-# you can also find out what the type of data you're working with
-print(type(younger_brother_age))
-
-younger_brother_age = "19"
-
-print(type(younger_brother_age))
+# input prints and allows user to input things
+input("Tell me your birth year: ")
