@@ -1,4 +1,6 @@
-test = f"math: {8 * 8}"
-print(test)
+younger_brother_age = 19
+older_sister_age = 20
 
-# you can also do math in fstrings
+print(younger_brother_age + older_sister_age)
+
+# numbers are written with no quotes
