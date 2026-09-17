@@ -1,5 +1,12 @@
-print("He said: \"what a cool school bcit is\"")
+statement = "bcit is a cool school"
+print(statement)
 
 # OR
 
-print('He said: "what a cool school bcit is"')
+print(statement)
+print(statement)
+print(statement)
+print(statement)
+print(statement)
+
+# OR you can like update the statement and it'll update for all
