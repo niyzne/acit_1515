@@ -1,5 +1,5 @@
-print("this is bcit and it's a cool school")
+print("He said: \"what a cool school bcit is\"")
 
-## OR
+# OR
 
-print('this is bcit and it\'s a cool school')
+print('He said: "what a cool school bcit is"')
