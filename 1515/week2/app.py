@@ -1,5 +1,8 @@
-school_statement = "bcit is a very cool school"
-print(statement)
+school = "bcit"
+statement = "is a cool school"
 
-# you can write spaces, but it has to be with things like _
-# you cant and shouldn't have actual spaces in variables
+school_statement = school + statement
+
+print(school)
+print(statement)
+print(school_statement)
