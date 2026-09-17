@@ -9,6 +9,6 @@
 ---
 ## Week 2
 
-- [app.py](https://git.relaypub.net/niyzne/acit/src/branch/main/1515/week2/in-class/app.py)
+- [app.py](https://git.relaypub.net/niyzne/acit/src/branch/main/1515/week2/app.py)
 
 ---
