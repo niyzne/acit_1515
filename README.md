@@ -7,6 +7,8 @@
 
 - [lab1](https://git.relaypub.net/niyzne/acit/src/branch/main/1515/week1/lab/lab1.py)
 
+
+---
 - [Practice](https://git.relaypub.net/niyzne/acit/src/branch/main/1515/week1/practice.py)
 
 ---
@@ -18,6 +20,9 @@
 
 ### In class
 
+- [in-class](https://git.relaypub.net/niyzne/acit/src/branch/main/1515/week2/in-class/in-class.py)
+
+---
 - [app.py](https://git.relaypub.net/niyzne/acit/src/branch/main/1515/week2/app.py)
 
 ---
