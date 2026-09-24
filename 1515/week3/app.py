@@ -11,3 +11,6 @@ if num.isnumeric():
         print("Odd")
 else:
     print("Please enter a number")
+
+# we want to rerun the thing, but how do we do it without, repasting the code (loops im guessing)
+num2 = input("Enter another number: ")
