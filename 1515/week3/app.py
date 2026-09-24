@@ -2,10 +2,10 @@
 # use input() to get a num
 # show the user a warning if they don't enter a number
 
-def odd_or_even(num):
-    if num.isnumeric():
-        num = int(num)
-        if num % 2 == 0:
+def odd_or_even(n):
+    if n.isnumeric():
+        n = int(n)
+        if n % 2 == 0:
             return "Even"
         return "Odd"
     return "Please enter a number"
