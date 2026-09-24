@@ -1,6 +1,8 @@
-# (Comment): Michael is from BC
-michael = 19
-legal_age = 19
+username = "michael"
+password = "123"
+min_length = 10
 
-if michael >= legal_age:
-    print("You can drink")
+if len(password) >= min_length:
+    print("you registered successfully!")
+else:
+    print("Your password is too short")
