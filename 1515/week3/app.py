@@ -1,27 +1,13 @@
-# figure out if a num is odd or even
-# use input() to get a num
-# show the user a warning if they don't enter a number
+def times_by_ten(n):
+    return n * 10
 
-# def odd_or_even(n):
-#     if n.isnumeric():
-#         n = int(n)
-#         if n % 2 == 0:
-#             return "Even"
-#         return "Odd"
-#     return "Please enter a number"
-#
-# num = input("Enter a number: ")
-# print(odd_or_even(num))
 
 def odd_or_even(n):
-    if n.isnumeric():
-        n = int(n)
-        if n % 2 == 0:
-            print("Even")
-        else:
-            print("Odd")
+    if n % 2 == 0:
+        print("Even")
     else:
-        print("Please enter a number")
+        print("Odd")
 
-num = input("Enter a number: ")
-odd_or_even(num)
+returnedValue = times_by_ten(5) # this then gets 'replaced' with 50, and that result can be used for other stuff
+print(returnedValue)
+odd_or_even(returnedValue)
