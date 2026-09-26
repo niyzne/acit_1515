@@ -6,11 +6,11 @@
 
 def isLeapYear(year):
     if (year % 400 == 0) or (year % 4 == 0 and not year % 100 == 0):
-        return 'leapyear'
-    return 'not leapyear'
+        return "leapyear"
+    return "not leapyear"
 
 def getDayOfTheWeek(year, month, day):
-    return(year, month, day)
+    return year, month, day
 
 # Part 2
 
