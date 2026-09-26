@@ -49,6 +49,7 @@ def getDayOfTheWeek(year, month, day):
 
     # step 6
     day_of_week = (number_of_12s + remainder + number_of_4s + day_of_month + month_code) % 7
+    # test
 
 # Part 2
 
