@@ -5,24 +5,24 @@
 
 ### Lab
 
-- [lab1](https://git.relaypub.net/niyzne/acit/src/branch/main/1515/week1/lab/lab1.py)
+- [lab1](1515/week1/lab/lab1.py)
 
 
 ---
-- [Practice](https://git.relaypub.net/niyzne/acit/src/branch/main/1515/week1/practice.py)
+- [Practice](1515/week1/practice.py)
 
 ---
 ## Week 2
 
 ### Lab
 
-- [lab2](https://git.relaypub.net/niyzne/acit/src/branch/main/1515/week2/lab/lab2.py)
+- [lab2](1515/week2/lab/lab2.py)
 
 ### In class
 
-- [in-class](https://git.relaypub.net/niyzne/acit/src/branch/main/1515/week2/in-class/in-class.py)
+- [in-class](1515/week2/in-class/in-class.py)
 
 ---
-- [app.py](https://git.relaypub.net/niyzne/acit/src/branch/main/1515/week2/app.py)
+- [app.py](1515/week2/app.py)
 
 ---
