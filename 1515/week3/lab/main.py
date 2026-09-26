@@ -7,4 +7,5 @@ import dow
 year = int(input("Year: "))
 month = input("Month: ")
 day = int(input("Day: "))
-print(dow.getDayOfTheWeek(year, month, day))
+#print(dow.getDayOfTheWeek(year, month, day))
+#dow.getDayOfTheWeek(year, month, day)
