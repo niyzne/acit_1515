@@ -14,6 +14,9 @@ def getDayOfTheWeek(year, month, day):
     last_two_digits = str(year)[2:]
     number_of_12s = int(last_two_digits) // 12
     return number_of_12s
+    # step 2
+    remainder = int(last_two_digits) % 12
+    return remainder
 
 # Part 2
 
