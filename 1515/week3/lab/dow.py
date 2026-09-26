@@ -13,18 +13,12 @@ def getDayOfTheWeek(year, month, day):
     # step 1
     last_two_digits = str(year)[2:]
     number_of_12s = int(last_two_digits) // 12
-    #return number_of_12s
-    #print(number_of_12s)
 
     # step 2
     remainder = int(last_two_digits) % 12
-    #return remainder
-    #print(remainder)
 
     # step 3
     number_of_4s = remainder // 4
-    #return number_of_4s
-    #print(number_of_4s)
 
     # step 4
     day_of_month = day
@@ -53,10 +47,19 @@ def getDayOfTheWeek(year, month, day):
         "21": 4
     }
     month_code = months[month[:3].capitalize()] + century[str(year)[:2]]
-    #return month_code
 
     # step 6
     day_of_week = (number_of_12s + remainder + number_of_4s + day_of_month + month_code) % 7
+    days_of_week = {
+        0: "Saturday",
+        1: "Sunday",
+        2: "Monday",
+        3: "Tuesday",
+        4: "Wednesday",
+        5: "Thursday",
+        6: "Friday"
+    }
+    day = days_of_week[day_of_week]
 
 # Part 2
 
