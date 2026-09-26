@@ -47,6 +47,9 @@ def getDayOfTheWeek(year, month, day):
     month_code = months[month[:3].capitalize()]
     #return month_code
 
+    # step 6
+    all_nums_mod_7 = (number_of_12s + remainder + number_of_4s + day_of_month + month_code) % 7
+
 # Part 2
 
 def makeCalendar():
