@@ -26,6 +26,27 @@ def getDayOfTheWeek(year, month, day):
     #return number_of_4s
     #print(number_of_4s)
 
+    # step 4
+    day_of_month = day
+
+    # step 5
+    months = {
+        "Jan": 1,
+        "Feb": 4,
+        "Mar": 4,
+        "Apr": 0,
+        "May": 2,
+        "Jun": 5,
+        "Jul": 0,
+        "Aug": 3,
+        "Sep": 6,
+        "Oct": 1,
+        "Nov": 4,
+        "Dec": 6
+    }
+    month_code = months[month[:3].capitalize()]
+    #return month_code
+
 # Part 2
 
 def makeCalendar():
