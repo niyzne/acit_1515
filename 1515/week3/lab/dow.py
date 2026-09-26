@@ -44,7 +44,15 @@ def getDayOfTheWeek(year, month, day):
         "Nov": 4,
         "Dec": 6
     }
-    month_code = months[month[:3].capitalize()]
+    century = {
+        "16": 6,
+        "17": 4,
+        "18": 2,
+        "19": 0,
+        "20": 6,
+        "21": 4
+    }
+    month_code = months[month[:3].capitalize()] + century[str(year)[:2]]
     #return month_code
 
     # step 6
