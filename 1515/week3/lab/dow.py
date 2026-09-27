@@ -1,4 +1,4 @@
-# dictionaries and functions
+# dictionaries and lists
 
 months = {
     "Jan": 1,
