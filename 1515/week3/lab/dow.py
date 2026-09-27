@@ -80,7 +80,6 @@ def makeCalendar():
             print(f"{month + 1}-{day}-{year} is a {day_of_week}.")
     days_in_month[1] = 28
 
-
 # ========================================
 # == LAB NOT DONE AT THE CURRENT MOMENT ==
 # ========================================
