@@ -5,9 +5,7 @@
 # Part 1
 
 def isLeapYear(year):
-    if (year % 400 == 0) or (year % 4 == 0 and not year % 100 == 0):
-        return True
-    return False
+    return (year % 400 == 0) or (year % 4 == 0 and not year % 100 == 0)
 
 def getDayOfTheWeek(year, month, day):
     # step 1
