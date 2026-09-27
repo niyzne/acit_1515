@@ -48,6 +48,9 @@ def getDayOfTheWeek(year, month, day):
     }
     month_code = months[month[:3].capitalize()] + century[str(year)[:2]]
 
+    if (month[:3].capitalize() == "Jan" or month[:3].capitalize() == "Feb") and isLeapYear(year):
+        month_code -= 1
+
     # step 6
     day_of_week = (number_of_12s + remainder + number_of_4s + day_of_month + month_code) % 7
     days_of_week = {
@@ -60,6 +63,7 @@ def getDayOfTheWeek(year, month, day):
         6: "Friday"
     }
     day = days_of_week[day_of_week]
+    return day
 
 # Part 2
 
