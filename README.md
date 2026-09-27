@@ -26,3 +26,11 @@
 - [app.py](1515/week2/app.py)
 
 ---
+## Week 3
+
+### Lab
+
+- [dow](1515/week3/lab/dow.py)
+- [main](1515/week3/lab/main.py)
+
+---
