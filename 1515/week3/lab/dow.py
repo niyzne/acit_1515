@@ -66,11 +66,14 @@ def getDayOfTheWeek(year, month, day):
 # Part 2
 
 def makeCalendar():
-#    months_list = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-#    month_num = months_list.index() + 1
-# (idk what doin hol up)
+    months_list = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
-    return f"{month_num}-{day}-{year} is a {day}"
+    for month in range(len(months_list)):
+        for day in days_in_month.index(month):
+            day = getDayOfTheWeek(2026, month, 1)
+
+            return f"{month}-{day}-{year} is a {day}"
 
 # ========================================
 # == LAB NOT DONE AT THE CURRENT MOMENT ==
