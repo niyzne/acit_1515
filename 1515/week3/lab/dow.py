@@ -1,3 +1,7 @@
+# ========================================
+# == LAB NOT DONE AT THE CURRENT MOMENT ==
+# ========================================
+
 # Part 1
 
 def isLeapYear(year):
@@ -69,3 +73,7 @@ def makeCalendar():
         for day in range(1, days_in_month[month] + 1):
             day_of_week = getDayOfTheWeek(2026, months_list[month], day)
             print(f"{month + 1}-{day}-2026 is a {day_of_week}")
+
+# ========================================
+# == LAB NOT DONE AT THE CURRENT MOMENT ==
+# ========================================
