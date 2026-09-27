@@ -1,7 +1,3 @@
-# ========================================
-# == LAB NOT DONE AT THE CURRENT MOMENT ==
-# ========================================
-
 import dow
 
 def month_type(month):
@@ -23,12 +19,7 @@ while True:
             month = month_type(month)
         day = int(input("day (number): "))
         print(dow.getDayOfTheWeek(year, month, day))
-        month = str(month)
     elif user_choice == "q":
         break
     else:
        print("Invalid choice, try again")
-
-# ========================================
-# == LAB NOT DONE AT THE CURRENT MOMENT ==
-# ========================================

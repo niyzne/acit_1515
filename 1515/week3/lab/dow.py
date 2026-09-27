@@ -1,7 +1,3 @@
-# ========================================
-# == LAB NOT DONE AT THE CURRENT MOMENT ==
-# ========================================
-
 # dictionaries and functions
 
 months = {
@@ -79,7 +75,3 @@ def makeCalendar():
             day_of_week = getDayOfTheWeek(year, months_list[month], day)
             print(f"{month + 1}-{day}-{year} is a {day_of_week}.")
     days_in_month[1] = 28
-
-# ========================================
-# == LAB NOT DONE AT THE CURRENT MOMENT ==
-# ========================================
