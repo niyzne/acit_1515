@@ -23,7 +23,7 @@ while True:
             month = month_type(month)
         day = int(input("day (number): "))
         print(dow.getDayOfTheWeek(year, month, day))
-        str(month)
+        month = str(month)
     elif user_choice == "q":
         break
     else:
