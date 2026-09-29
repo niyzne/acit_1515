@@ -5,7 +5,7 @@ def month_type(month):
         return dow.months_list[month - 1]
 
 while True:
-    user_choice = input("Hello friend. What do you want to do? Choices: [1] print all days in year, [2] print specific day, [q] quit: ")
+    user_choice = input("Hello friend. What do you want to do?\n[1] print all days in year, \n[2] print specific day, \n[q] quit \nYour choice?: ")
     if user_choice == "1":
         dow.makeCalendar()
     elif user_choice == "2":
