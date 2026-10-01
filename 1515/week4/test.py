@@ -1,4 +1,5 @@
 fruits = ["apple", "banana", "pear"]
 
-for i, fruit in enumerate(fruits):
-    print(fruits[i])
+i = 0
+while(i < 3):
+    print("We looped!")
