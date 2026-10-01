@@ -1,7 +1,6 @@
 fruits = ["apple", "banana", "pear"]
 
 i = 0
-while(i < 3):
-    print("We looped!")
+while i < len(fruits):
+    print(fruits[i])
     i += 1
-    # or i = i + 1
