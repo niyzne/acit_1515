@@ -5,6 +5,8 @@ name = " hugh jaCKman "
 
 def create_username(name):
     print("@" + name.replace(" ", "_"))
+    # or we can do
+    # print(f'@{(name.replace(" ", "_"))}')
 
 def clean_name(name):
     return name.strip().lower()
