@@ -1,6 +1,6 @@
-fruits = ["apple", "banana", "pear"]
+year = 2026
+days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
-for i in range(1, 11):
-    print(i)
-
-# goes from 1 up to 10, but includes 10
+for month in range(12):
+    for days in range(1, days_in_month[month] + 1):
+        print(days)
