@@ -3,7 +3,11 @@
 
 name = " hugh jaCKman "
 
-def clean_name(name):
-    print(name.strip().lower())
+def create_username(name):
+    print("@" + name.replace(" ", "_"))
 
-clean_name(name)
+def clean_name(name):
+    return name.strip().lower()
+
+cleaned_name = clean_name(name)
+create_username(cleaned_name)
