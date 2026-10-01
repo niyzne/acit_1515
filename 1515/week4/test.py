@@ -2,6 +2,7 @@
 # cleaner!
 # for this specific case
 colors = {
+    # key    value
     "red": "#f5291b",
     "orange": "#f2a20c"
 }
