@@ -1,12 +1,9 @@
-def is_leap_year(year_input):
-    return True
+# str
+# int
+# float
+# bool
 
-year = 2024
-days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+# we used these, and realized we can use them together
 
-if is_leap_year(year):
-    days_in_month[1] = 29
-
-for month in range(len(days_in_month)):
-    for day in range(1, days_in_month[month] + 1):
-        print(f"{month + 1}-{day}-{year}")
+# you can put all into a list together even
+# list [str, int, bool, flaot]
