@@ -1,9 +1,5 @@
-# str
-# int
-# float
-# bool
+# if a loop is this simple. we can do lists ofc
+colors = ["red", "orange", "blue"]
 
-# we used these, and realized we can use them together
-
-# you can put all into a list together even
-# list [str, int, bool, flaot]
+for i, color in enumerate(colors):
+    print(i, color)
