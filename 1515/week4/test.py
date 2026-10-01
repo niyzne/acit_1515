@@ -1,10 +1,15 @@
-# if a loop is this simple. we can do lists ofc
-# but what if you want smth more detail. more complex
-colors = [["red", "#f5291b"], ["orange", "#f2a20c"]]
-# the whole lists are, 0, and 1, in this case
+# but... dictionaries!
+# cleaner!
+# for this specific case
+colors = {
+    "red": "#f5291b",
+    "orange": "#f2a20c"
+}
 
-# for i, color in enumerate(colors):
-#     print(i, color)
+print(colors["red"])
 
-# not the best.. but it works
-print(colors[1][1])
+colors_list = ["red", "orange"]
+print(colors_list[1]) # orange
+
+# this is why it's important to when needed make dictionary, becaue otherwise it's made for you
+# colors = {"0": "red", "1": "orange"}
