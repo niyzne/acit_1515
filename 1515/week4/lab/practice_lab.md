@@ -29,11 +29,11 @@ In the dictionary below:
 6. Check if the dictionary has a key called eyeColor, and if it doesn't, print out: "Missing key"
 7. Loop through the object, printing the key and value for each pair.
 
-```javascript
+```python
 person = { "name": "Sarah", "height": "6 feet", "age": 22 }
 ```
 
-```javascript
+```python
 1. 
 2. 
 3. 
@@ -158,7 +158,7 @@ For example, if the input was
 
 then the output would be:
 
-```javascript
+```python
 {
   "buy": 1,
   "it": 7,
@@ -271,7 +271,7 @@ print(artistsByYear(artists))
 
 ### Expected Output
 
-```javascript
+```python
 {
   "2018": [
     {
