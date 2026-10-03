@@ -159,7 +159,7 @@ else:
 
 ### Uppercase Odds
 
-In this problem, convert a normal string into`uppercaseOddWords`text. This function should convert every other word in a sentence to uppercase.
+In this problem, convert a normal string into `uppercaseOddWords` text. This function should convert every other word in a sentence to uppercase.
 
 So given the following sentence:
 
@@ -187,6 +187,12 @@ Your Code:
 
 ```python
 # your code here
+def upperCamelCase(message):
+    message = message.split()
+    newString = ""
+    for word in message:
+        newString += word.capitalize()
+    return newString
 
 upperCamelCase("fur pillows are hard to actually sleep on")
 ```
