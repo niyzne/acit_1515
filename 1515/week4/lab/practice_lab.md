@@ -288,6 +288,14 @@ inputs = [
 ]
 
 # your code here
+def wordPosition(message):
+    newDict = {}
+    for index, word in enumerate(message):
+        if word in newDict:
+            newDict[word].append(index)
+        else:
+            newDict[word] = [index]
+    return newDict
 
 output = wordPosition(inputs)
 print(output)
