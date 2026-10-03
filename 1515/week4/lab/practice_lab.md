@@ -134,16 +134,14 @@ securityQuestions = [
     }
 ]
 
-correct = 0
-
 for question in securityQuestions:
     q = (input(question["question"])).lower().strip()
     if q == (question["expectedAnswer"]):
-        correct += 1
+        pass
     else:
         print("Invalid response, please try again later")
         break
-if correct == 3:
+else:
     print("Success. You may now access your account")
 ```
 
