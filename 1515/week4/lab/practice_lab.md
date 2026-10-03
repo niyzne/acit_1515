@@ -68,14 +68,14 @@ An empty list should return `0`.
 
 ```python
 # your code here
-def countLongWords(word_list, word_length):
+def countLongWords(words, minimumLength):
     counter = 0
 
-    if not word_list:
+    if not words:
         return 0
     else:
-        for word in word_list:
-            if len(word) >= word_length:
+        for word in words:
+            if len(word) >= minimumLength:
                 counter += 1
 
     return counter
@@ -93,6 +93,8 @@ Write a function called `removeRepeats(items)` that returns a new list contain
 
 ```python
 # your code here
+def removeRepeats(items):
+    return list(dict.fromkeys(items))
 
 removeRepeats(["apple", "banana", "apple", "pear", "banana"])
 # returns ["apple", "banana", "pear"]
@@ -103,14 +105,13 @@ removeRepeats([3, 3, 1, 2, 1])
 
 ### Security Questions
 
-1. Create a list called`securityQuestions`. Every element (item) in`securityQuestions`will be a dictionary with two keys:`question`and`expectedAnswer`.
-    
-2. Fill the`securityQuestions`list with at least three of these dictionaries. Example: one dictionary could be:
-    
+1. Create a list called `securityQuestions`. Every element (item) in `securityQuestions` will be a dictionary with two keys: `question` and `expectedAnswer`.
+
+2. Fill the `securityQuestions`list with at least three of these dictionaries. Example: one dictionary could be:
+
     `{ "question": "What was your first pet's name?", "expectedAnswer": "coco" }`
-    
+
 3. Write code that goes through each of the security questions in your list doing the following:
-    
 
 - Use `input` to ask the user each question in the securityQuestions list.
 - Check whether the user response matches the expected answer. If the answer does match, go ahead and ask the next question, but if the answer does not match, stop asking the user questions and show a message saying: "Invalid response, please try again later".
