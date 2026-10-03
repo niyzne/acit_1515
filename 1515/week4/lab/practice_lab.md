@@ -107,25 +107,53 @@ removeRepeats([3, 3, 1, 2, 1])
 
 1. Create a list called `securityQuestions`. Every element (item) in `securityQuestions` will be a dictionary with two keys: `question` and `expectedAnswer`.
 
-2. Fill the `securityQuestions`list with at least three of these dictionaries. Example: one dictionary could be:
+2. Fill the `securityQuestions` list with at least three of these dictionaries. Example: one dictionary could be:
 
     `{ "question": "What was your first pet's name?", "expectedAnswer": "coco" }`
 
 3. Write code that goes through each of the security questions in your list doing the following:
 
-- Use `input` to ask the user each question in the securityQuestions list.
+- Use `input` to ask the user each question in the security Questions list.
 - Check whether the user response matches the expected answer. If the answer does match, go ahead and ask the next question, but if the answer does not match, stop asking the user questions and show a message saying: "Invalid response, please try again later".
 - If the user successfully answers all the questions, print: "Success. You may now access your account".
 
 ```python
 # your code here
+securityQuestions = [
+    { 
+        "question": "What is your favorite food?: ",
+        "expectedAnswer": "pizza"
+    },
+    { 
+        "question": "What is your favorite sport?: ",
+        "expectedAnswer": "soccer"
+    },
+    { 
+        "question": "What is your favorite animal?: ",
+        "expectedAnswer": "dog"
+    }
+]
+
+invalid_response = "Invalid response, please try again later"
+success_response = "Success. You may now access your account"
+
+for question in securityQuestions:
+    correct = 0
+    q = input(question["question"])
+    if q == (question["expectedAnswer"]):
+        correct += 1
+    else:
+        print(invalid_response)
+        break
+    if correct == 3:
+        print(success_response)
 ```
 
 ### Login
 
-1. Create a dictionary called`login`with a key for the user's name and a key for the user's password. The values can be whatever you want.
-2. Write code that uses`input` to ask the user for their password with a message that includes their username. Example: If the user name you created is`sarah123`, the message should be`"Enter password for sarah123: "`
-3. Check if the password entered by the user matches the password in the`login`dictionary. If it matches, you can print out: "You may access your account" and end the program.
+1. Create a dictionary called `login` with a key for the user's name and a key for the user's password. The values can be whatever you want.
+2. Write code that uses `input` to ask the user for their password with a message that includes their username. Example: If the user name you created is `sarah123`, the message should be `"Enter password for sarah123: "`
+3. Check if the password entered by the user matches the password in the `login` dictionary. If it matches, you can print out: "You may access your account" and end the program.
 4. If the passwords do not match, make the user retry entering their password. You must keep showing them this message until they enter a correct password.
 5. Now that you’ve gotten that working, I want you to modify your code to give the user **only three chances** to enter the correct password. If they fail to enter a correct password after 3 tries, you must exit the program, saying to the user: "You have tried too many times.". The solution you paste below should be the version that gives the user only three chances.
 
