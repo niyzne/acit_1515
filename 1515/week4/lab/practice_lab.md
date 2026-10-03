@@ -53,7 +53,7 @@ person = {
 
 5. del person["height"]
 
-6. 
+6. "eyeColor" in person
 
 7. 
 for a, b in person.item():
