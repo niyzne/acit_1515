@@ -183,12 +183,12 @@ def uppercaseOddWords(message):
     even = True
     for word in message:
         if even:
-            newString += word
+            newString += word + " "
             even = False
         else:
-            newString += word.upper()
+            newString += word.upper() + " "
             even = True
-    return newString
+    return newString.strip()
 ```
 
 ### upperCamelCase
