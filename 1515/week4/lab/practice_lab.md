@@ -177,6 +177,18 @@ Your function should return:
 
 ```python
 # your code here
+def uppercaseOddWords(message):
+    message = message.split()
+    newString = ""
+    even = True
+    for word in message:
+        if even:
+            newString += word
+            even = False
+        else:
+            newString += word.upper()
+            even = True
+    return newString
 ```
 
 ### upperCamelCase
