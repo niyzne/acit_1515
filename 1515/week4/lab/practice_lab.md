@@ -134,19 +134,17 @@ securityQuestions = [
     }
 ]
 
-invalid_response = "Invalid response, please try again later"
-success_response = "Success. You may now access your account"
+correct = 0
 
 for question in securityQuestions:
-    correct = 0
-    q = input(question["question"])
+    q = (input(question["question"])).lower().strip()
     if q == (question["expectedAnswer"]):
         correct += 1
     else:
-        print(invalid_response)
+        print("Invalid response, please try again later")
         break
-    if correct == 3:
-        print(success_response)
+if correct == 3:
+    print("Success. You may now access your account")
 ```
 
 ### Login
