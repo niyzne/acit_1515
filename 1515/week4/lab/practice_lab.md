@@ -217,7 +217,7 @@ FurPillowsAreHardToActuallySleepOn
 
 ### Count words
 
-Do you ever listen to a song and wonder how many times the artist says each word in the song? Probably not…but let’s make a program that can figure this out anyways! For example, we want our program to be able to figure out how many times Daft Punk say the word`it`in their song`Technologic`.
+Do you ever listen to a song and wonder how many times the artist says each word in the song? Probably not…but let’s make a program that can figure this out anyways! For example, we want our program to be able to figure out how many times Daft Punk say the word `it` in their song `Technologic`.
 
 It’s 399!
 
@@ -249,6 +249,15 @@ Your code:
 
 ```python
 # your code here
+def countWords(message):
+    message = message.split()
+    newDict = {}
+    for word in message:
+        if word in newDict:
+            newDict[word] += 1
+        else:
+            newDict[word] = 1
+    return newDict
 
 inputs = "buy it use it break it fix it trash it change it mail upgrade it"
 output = countWords(inputs)
