@@ -33,25 +33,14 @@ In the dictionary below:
 person = { "name": "Sarah", "height": "6 feet", "age": 22 }
 ```
 
-
 ```python
-person = { 
-  "name": "Sarah", 
-  "height": "6 feet", 
-  "age": 22 
-}
-```
-
-```python
-1. "name", "height", "6 feet"
-2. person["age"]
-3. person["hairColor"] = "black"
-4. person.update({"hairColor": "brown"})
-5. del person["height"]
+1. 
+2. 
+3. 
+4. 
+5. 
 6. 
 7. 
-for a, b in person.item():
-  print(a, b)
 ```
 
 ### Count Long Words
