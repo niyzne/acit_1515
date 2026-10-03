@@ -44,11 +44,17 @@ person = {
 
 ```python
 1. "name", "height", "6 feet"
+
 2. person["age"]
+
 3. person["hairColor"] = "black"
+
 4. person.update({"hairColor": "brown"})
+
 5. del person["height"]
+
 6. 
+
 7. 
 for a, b in person.item():
   print(a, b)
@@ -62,6 +68,17 @@ An empty list should return `0`.
 
 ```python
 # your code here
+def countLongWords(word_list, word_length):
+    counter = 0
+
+    if not word_list:
+        return 0
+    else:
+        for word in word_list:
+            if len(word) >= word_length:
+                counter += 1
+
+    return counter
 
 countLongWords(["cat", "tiger", "elephant", "dog"], 5)
 # returns 2
