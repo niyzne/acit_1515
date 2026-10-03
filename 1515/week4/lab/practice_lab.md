@@ -353,6 +353,14 @@ artists = [
 ]
 
 # your code here
+def artistsByYear(artists):
+    result = {}
+    for item in artists:
+        if str(item["year"]) not in result:
+            result[str(item["year"])] = []
+        result[str(item["year"])].append(item)
+
+    return result
 
 print(artistsByYear(artists))
 ```
