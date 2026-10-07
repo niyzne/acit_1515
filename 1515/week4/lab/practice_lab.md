@@ -62,7 +62,7 @@ if "eyeColor" not in person:
     print("Missing key")
 
 7.
-for key, value in person.item():
+for key, value in person.items():
     print(key, value)
 ```
 
