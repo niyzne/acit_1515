@@ -10,6 +10,10 @@ If both words have the same length, return the first word.
 
 ```python
 # your code here
+def longerWord(first, second):
+    if len(first) > len(second):
+        return first
+    return second
 
 longerWord("cat", "elephant")  # returns "elephant"
 longerWord("tiger", "bear")    # returns "tiger"
