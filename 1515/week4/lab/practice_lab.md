@@ -161,6 +161,25 @@ else:
 
 ```python
 # your code here
+login = {
+  username: password
+}
+
+def login(n, p):
+    #psudo code
+    if (password matches):
+        print("You may access your account")
+    else:
+        try = input("Password is wrong, try again: ")
+        #psudo code
+        if try (password matches):
+            print("You may access your account")
+            break
+
+username = input("please enter your username: ")
+password = input(f"Enter password for {username}: ")
+
+login(username, password)
 ```
 
 ### Uppercase Odds
