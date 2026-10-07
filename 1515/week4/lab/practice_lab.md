@@ -47,9 +47,9 @@ person = {
 ```
 
 ```python
-1. "name", "height", "6 feet"
+1. print(person.keys())
 
-2. person["age"]
+2. print(person["age"])
 
 3. person["hairColor"] = "black"
 
@@ -57,11 +57,13 @@ person = {
 
 5. del person["height"]
 
-6. "eyeColor" in person
+6.
+if "eyeColor" not in person:
+    print("Missing key")
 
-7. 
-for a, b in person.item():
-  print(a, b)
+7.
+for key, value in person.item():
+    print(key, value)
 ```
 
 ### Count Long Words
