@@ -161,9 +161,7 @@ else:
 
 ```python
 # your code here
-login = {
-  username: password
-}
+login = {input("Username: "): input("Password: ")}
 
 def login(n, p):
     #psudo code
