@@ -1,8 +1,11 @@
 # TODO: Breaking your code into functions
 # TODO: using the return keyword effectively
 
+def check_age(age):
+    return age >= 16
+
 def can_drive(age, has_license):
-    if age >= 16 and has_license:
+    if check_age(age) and has_license:
         return "You can drive"
     return "You cannot drive"
 
