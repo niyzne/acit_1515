@@ -2,9 +2,8 @@
 # TODO: using the return keyword effectively
 
 def can_drive(age, has_license):
-    if age >= 16:
-        if has_license == True:
-            return "You can drive"
+    if age >= 16 and has_license:
+        return "You can drive"
     return "You cannot drive"
 
 person_who_can_drive = can_drive(20, True)
