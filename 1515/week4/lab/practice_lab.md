@@ -1,3 +1,10 @@
+LAB NOT DONE AT THE MOMENT!!!
+LAB NOT DONE AT THE MOMENT!!!
+LAB NOT DONE AT THE MOMENT!!!
+LAB NOT DONE AT THE MOMENT!!!
+LAB NOT DONE AT THE MOMENT!!!
+
+
 # Python Practice Lab
 
 For this lab, I want you to show me that you understand the fundamental concepts we’ve been covering in Python thus far. For each question, I want you to paste your solution into the code box below each question. When you are finished, submit your notion link to the learning hub drop box.
