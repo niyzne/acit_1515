@@ -1,9 +1,20 @@
-login = {"username": "sarah123", "password": "apple123"}
+inputs = [
+  "buy",
+  "it",
+  "use",
+  "it",
+  "break",
+  "it",
+  "fix",
+  "it",
+  "trash",
+  "it",
+  "change",
+  "it",
+  "mail",
+  "upgrade",
+  "it",
+]
 
-for attempt in range(3):
-    password = input(f"Enter a password for {login['username']}")
-    if password == login["password"]:
-        print(f"you typed {password}")
-        break
-else:
-    print("Please type it right next time")
+for i, word in enumerate(inputs):
+    print(i, word)
