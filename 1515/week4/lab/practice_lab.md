@@ -14,6 +14,7 @@ def longerWord(first, second):
     if len(first) > len(second):
         return first
     return second
+# make it so it returns first word if they same length
 
 longerWord("cat", "elephant")  # returns "elephant"
 longerWord("tiger", "bear")    # returns "tiger"
