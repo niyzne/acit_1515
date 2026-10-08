@@ -40,7 +40,6 @@ In the dictionary below:
 person = { "name": "Sarah", "height": "6 feet", "age": 22 }
 ```
 
-
 ```python
 person = { 
   "name": "Sarah", 
@@ -50,15 +49,20 @@ person = {
 ```
 
 ```python
-1. print(person.keys())
+1.
+print(person.keys())
 
-2. print(person["age"])
+2.
+print(person["age"])
 
-3. person["hairColor"] = "black"
+3.
+person["hairColor"] = "black"
 
-4. person.update({"hairColor": "brown"})
+4.
+person.update({"hairColor": "brown"})
 
-5. del person["height"]
+5.
+del person["height"]
 
 6.
 if "eyeColor" not in person:
