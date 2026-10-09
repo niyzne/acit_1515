@@ -181,9 +181,25 @@ else:
 
 ```python
 # your code here
-login = {input("Username: "): input("Password: ")}
+login = {"Username": input("Username: "), "Password": input("Password: ")}
 
-def login(n, p):
+def login():
+    for attempt in range(3):
+        if password == login["Password"]:
+            print("You may access your account")
+            break
+    else:
+        print("You have tried too many times.")
+
+username = input("please enter your username: ")
+password = input(f"Enter password for {username}: ")
+
+login()
+```
+
+
+
+
     #psudo code
     if (password matches):
         print("You may access your account")
@@ -193,12 +209,6 @@ def login(n, p):
         if try (password matches):
             print("You may access your account")
             break
-
-username = input("please enter your username: ")
-password = input(f"Enter password for {username}: ")
-
-login(username, password)
-```
 
 ### Uppercase Odds
 
