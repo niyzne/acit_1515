@@ -18,6 +18,7 @@ def longerWord(first, second):
             return first
         return second
 
+# Would need to use print() for the function to return
 longerWord("cat", "elephant")  # returns "elephant"
 longerWord("tiger", "bear")    # returns "tiger"
 longerWord("sun", "moon")     # returns "moon"
@@ -50,7 +51,7 @@ person = {
 
 ```python
 1.
-print(person.keys())
+print(person.keys()) # "name", "height", "age"
 
 2.
 print(person["age"])
