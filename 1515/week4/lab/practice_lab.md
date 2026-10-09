@@ -114,7 +114,13 @@ Write a function called `removeRepeats(items)` that returns a new list contain
 ```python
 # your code here
 def removeRepeats(items):
-    return list(dict.fromkeys(items))
+    result = []
+ 
+    for item in items:
+        if item not in result:
+            result.append(item)
+
+    return result
 
 removeRepeats(["apple", "banana", "apple", "pear", "banana"])
 # returns ["apple", "banana", "pear"]
