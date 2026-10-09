@@ -1,10 +1,3 @@
-LAB NOT DONE AT THE MOMENT!!!
-LAB NOT DONE AT THE MOMENT!!!
-LAB NOT DONE AT THE MOMENT!!!
-LAB NOT DONE AT THE MOMENT!!!
-LAB NOT DONE AT THE MOMENT!!!
-
-
 # Python Practice Lab
 
 For this lab, I want you to show me that you understand the fundamental concepts we’ve been covering in Python thus far. For each question, I want you to paste your solution into the code box below each question. When you are finished, submit your notion link to the learning hub drop box.
@@ -181,34 +174,24 @@ else:
 
 ```python
 # your code here
-login = {"Username": input("Username: "), "Password": input("Password: ")}
+login = {
+    "Username": input("Username: "), 
+    "Password": input("Password: ")
+}
 
-def login():
+def loginFunc():
+    username = login["Username"]
+
     for attempt in range(3):
+        password = input(f"Enter password for {username}: ")
         if password == login["Password"]:
             print("You may access your account")
             break
     else:
         print("You have tried too many times.")
 
-username = input("please enter your username: ")
-password = input(f"Enter password for {username}: ")
-
-login()
+loginFunc()
 ```
-
-
-
-
-    #psudo code
-    if (password matches):
-        print("You may access your account")
-    else:
-        try = input("Password is wrong, try again: ")
-        #psudo code
-        if try (password matches):
-            print("You may access your account")
-            break
 
 ### Uppercase Odds
 
