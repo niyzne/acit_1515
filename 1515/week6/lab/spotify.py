@@ -21,16 +21,16 @@ def add_song():
     songArtist = input("Enter artist: ")
     songDurationChoice = input("Enter duration\n[1] minutes\n[2] seconds\nEnter mode: ")
     songDuration = songDurationFunc(songDurationChoice)
-
-# Enter song title: Blinding Lights
-# Enter artist: The Weeknd
-# Enter duration (minutes): 3
-# Enter duration (seconds): 20
+    return songTitle, songArtist, songDuration
 
 # def record_listen
 def record_listen():
     pass
+    songTitle = input("Enter song title: ")
+    # Search through the list and increase the matching song's play count by 1.
+    # If the song doesn't exist, display an error message.
 
 # def generate_wrapped
 def generate_wrapped():
     pass
+    # return f"========== YOUR SPOTIFY WRAPPED ==========\n\nTotal Songs: {smth}\nTotal Plays: {smth}\nTotal Listening Time: {smth} minutes\n\nYour Most Played Song:\n{song} - {artist} ({nuber of plays} plays)\n\n=========================================="

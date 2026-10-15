@@ -4,26 +4,28 @@ import messages
 # == LAB NOT DONE AT THE MOMENT ==
 # ================================
 
-songs = [
-    {
-        "title": "Blinding Lights",
-        "artist": "The Weeknd",
-        "duration": 200,
-        "plays": 5
-    },
-    {
-        "title": "Numb",
-        "artist": "Linkin Park",
-        "duration": 187,
-        "plays": 8
-    },
-    {
-        "title": "Shape of You",
-        "artist": "Ed Sheeran",
-        "duration": 234,
-        "plays": 3
-    }
-]
+# songs = [
+#     {
+#         "title": "Blinding Lights",
+#         "artist": "The Weeknd",
+#         "duration": 200,
+#         "plays": 5
+#     },
+#     {
+#         "title": "Numb",
+#         "artist": "Linkin Park",
+#         "duration": 187,
+#         "plays": 8
+#     },
+#     {
+#         "title": "Shape of You",
+#         "artist": "Ed Sheeran",
+#         "duration": 234,
+#         "plays": 3
+#     }
+# ]
+
+songs = []
 
 def main():
     while True:
