@@ -32,11 +32,12 @@ def main():
         userChoice = input("====== SPOTIFY WRAPPED ======\n\n1. Add a song\n2. Record a listen\n3. Generate Spotify Wrapped\n4. Exit\n\nEnter your choice: ")
         userChoice = userChoice.strip()
         if userChoice == "1":
-            spotify.add_song()
+            newSong = spotify.add_song()
+            songs.append(newSong)
         elif userChoice == "2":
-            pass
+            spotify.record_listen()
         elif userChoice == "3":
-            pass
+            spotify.generate_wrapped()
         elif userChoice == "4":
             messages.goodbye()
             break
