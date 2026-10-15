@@ -7,8 +7,7 @@ def main(text):
     uniqueMeals = menu_data.makeUniqueMeals(organizeDict)
     uniqueMeals.sort()
     for mealType in uniqueMeals:
-        print()
-        print(f"* {mealType.capitalize()} Items *")
+        print(f"* {mealType.capitalize()} Items *\n")
         for i in range(len(organizeDict[mealType])):
             price = float(organizeDict[mealType][i]['price'].replace('$', ''))
             price = price * 1.8
