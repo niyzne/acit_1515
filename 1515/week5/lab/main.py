@@ -18,8 +18,20 @@ def group(string):
         i += 4
     return groups
 
+def makeDict(string):
+    listWithGroups = group(string)
+    newDict = {}
+    for category in listWithGroups:
+        # if (smth)
+            # smth
+        # smth append
+
+    return newDict
+
+print(makeDict(csv_text))
+
 def main(string):
     listWithGroups = group(string)
     print(listWithGroups)
 
-main(csv_text)
+# main(csv_text)
