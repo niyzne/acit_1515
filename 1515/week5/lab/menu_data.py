@@ -6,9 +6,10 @@ lunch,bento box a - chicken teriyaki,box combo,$8.59"""
 
 def getDict(longString):
     listOfThings = csv_text.split('\n')
+    newList = []
     for row in listOfThings:
         bitsOfRow = row.split(",")
-        print(bitsOfRow)
-    # print(listOfThings)
+        newList.append({"when":bitsOfRow[0],"what":bitsOfRow[1],"amount":bitsOfRow[2],"price":bitsOfRow[3]})
+    print(newList)
 
 getDict(csv_text)
