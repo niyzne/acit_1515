@@ -1,8 +1,8 @@
+import spotify
+import messages
 # ================================
 # == LAB NOT DONE AT THE MOMENT ==
 # ================================
-
-import spotify
 
 songs = [
     {
@@ -25,36 +25,20 @@ songs = [
     }
 ]
 
-# def main():
-#     pass
-#
-# main()
+def main():
+    while True:
+        userChoice = input("====== SPOTIFY WRAPPED ======\n\n1. Add a song\n2. Record a listen\n3. Generate Spotify Wrapped\n4. Exit\n\nEnter your choice: ")
+        userChoice = userChoice.strip()
+        if userChoice == "1":
+            spotify.add_song()
+        elif userChoice == "2":
+            pass
+        elif userChoice == "3":
+            pass
+        elif userChoice == "4":
+            messages.goodbye()
+            break
+        else:
+            messages.invalidInput()
 
-colors = {
-    "red": "\033[91m",
-    "green": "\033[92m",
-    "yellow": "\033[93m",
-    "blue": "\033[94m",
-    "reset": "\033[0m"
-}
-
-def invalidInput():
-    print(f'{colors["red"]}Invalid input, try again{colors["reset"]}')
-
-def goodbye():
-    print(f'{colors["blue"]}Have a good day{colors["reset"]}')
-
-while True:
-    userChoice = input("====== SPOTIFY WRAPPED ======\n\n1. Add a song\n2. Record a listen\n3. Generate Spotify Wrapped\n4. Exit\n\nEnter your choice: ")
-    userChoice = userChoice.strip()
-    if userChoice == "1":
-        pass
-    elif userChoice == "2":
-        pass
-    elif userChoice == "3":
-        pass
-    elif userChoice == "4":
-        goodbye()
-        break
-    else:
-        invalidInput()
+main()
