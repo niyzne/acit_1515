@@ -14,6 +14,13 @@ def parse_item(line):
     }
     return category, item
 
+def print_menu(menu):
+    for category in menu:
+        print(f"* {category} *")
+        for item in menu[category]:
+            print(f"{item['price'], item['name'], time['quantity']}")
+        print()
+
 def main():
     menu = {}
     for line in csv_text.split("\n"):
