@@ -9,8 +9,7 @@ def main(text):
     for mealType in uniqueMeals:
         print(f"\n* {mealType.capitalize()} Items *")
         for i in range(len(organizeDict[mealType])):
-            price = float(organizeDict[mealType][i]['price'].replace('$', ''))
-            price = price * 1.8
+            price = (float(organizeDict[mealType][i]['price'].replace('$', ''))) * 1.8
             print(f"${price:.2f} {organizeDict[mealType][i]['foodName']} {organizeDict[mealType][i]['amount']}")
 
 main(csv_text)
