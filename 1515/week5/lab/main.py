@@ -1,5 +1,4 @@
 import menu_data
-from menu_data import csv_text
 
 def main(text):
     newDict = menu_data.getDict(text)
@@ -12,4 +11,4 @@ def main(text):
             price = (float(organizeDict[mealType][i]['price'].replace('$', ''))) * 1.8
             print(f"${price:.2f} {organizeDict[mealType][i]['foodName']} {organizeDict[mealType][i]['amount']}")
 
-main(csv_text)
+main(menu_data.csv_text)
