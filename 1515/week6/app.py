@@ -6,10 +6,14 @@ lunch,bento box a - chicken teriyaki,box combo,$8.59
 dessert,cheesecake,1 slice,$8.00"""
 
 def main():
-    # TODO: split the string into rows
-    print(csv_text.split("\n"))
-    # TODO: loop trhough each row and split into pieces
-    # TODO: group together lunch and dinner items
+    manu = {}
+    for line in csv_text.split("\n"):
+        category, item = parse_items(line)
+        if category in menu:
+            menu[category].append(item)
+        else:
+            menu[category] = [item]
+
     # TODO: format groupings into a pretty menu str
     # TODO: print the pretty menu
 
