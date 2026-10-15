@@ -9,8 +9,17 @@ def makeList(msg):
   
   return newList
 
-def main(string):
+def group(string):
     newList = makeList(string)
-    print(newList)
+    groups = []
+    i = 0
+    while i < len(newList):
+        groups.append(newList[i:i+4])
+        i += 4
+    return groups
+
+def main(string):
+    listWithGroups = group(string)
+    print(listWithGroups)
 
 main(csv_text)
