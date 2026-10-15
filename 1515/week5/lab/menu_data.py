@@ -19,3 +19,9 @@ def organize(meals):
             result[str(item["when"])] = []
         result[str(item["when"])].append(item)
     return result
+
+def makeUniqueMeals(newMenuDict):
+    newUniqueMeals = []
+    for type in newMenuDict:
+        newUniqueMeals.append(type)
+    return newUniqueMeals
