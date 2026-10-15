@@ -3,3 +3,12 @@ dinner,vegetable sushi,6 rolls,$3.50
 dinner,tuna roll,3 rolls,$4.50
 dinner,roe,2 rolls,$3.95
 lunch,bento box a - chicken teriyaki,box combo,$8.59"""
+
+def getDict(longString):
+    listOfThings = csv_text.split('\n')
+    for row in listOfThings:
+        bitsOfRow = row.split(",")
+        print(bitsOfRow)
+    # print(listOfThings)
+
+getDict(csv_text)
