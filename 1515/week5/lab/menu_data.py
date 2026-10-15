@@ -19,5 +19,3 @@ def organize(meals):
             result[str(item["when"])] = []
         result[str(item["when"])].append(item)
     return result
-
-print(organize(getDict(csv_text)))

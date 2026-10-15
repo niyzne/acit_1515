@@ -1,7 +1,9 @@
-import csv_text
+import menu_data
 from menu_data import csv_text
 
-def main():
-    print(csv_text)
+def main(text):
+    newDict = menu_data.getDict(text)
+    organizeDict = menu_data.organize(newDict)
+    print(organizeDict)
 
-main()
+main(csv_text)
