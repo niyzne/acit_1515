@@ -9,7 +9,15 @@ def getDict(longString):
     newList = []
     for row in listOfThings:
         bitsOfRow = row.split(",")
-        newList.append({"when":bitsOfRow[0],"what":bitsOfRow[1],"amount":bitsOfRow[2],"price":bitsOfRow[3]})
-    print(newList)
+        newList.append({"when":bitsOfRow[0],"foodName":bitsOfRow[1],"amount":bitsOfRow[2],"price":bitsOfRow[3]})
+    return newList
 
-getDict(csv_text)
+def organize(meals):
+    result = {}
+    for item in meals:
+        if str(item["when"]) not in result:
+            result[str(item["when"])] = []
+        result[str(item["when"])].append(item)
+    return result
+
+print(organize(getDict(csv_text)))
