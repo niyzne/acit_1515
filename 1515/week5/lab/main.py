@@ -22,13 +22,30 @@ def makeDict(string):
     listWithGroups = group(string)
     newDict = {}
     for category in listWithGroups:
-        # if (smth)
-            # smth
-        # smth append
+        if category[0] not in newDict:
+            newDict[category[0]] = []
+        newDict[category[0]].append(category)
 
-    return newDict
+    updatedDict = {}
+    for category in newDict:
+        newDict[category.pop(0)]
+
+    # return newDict
+    return updatedDict
 
 print(makeDict(csv_text))
+
+# def removeFirstIndex(newDictionary):
+#     newDict = makeDict(newDictionary)
+#     updatedDict = {}
+#     for category in newDict:
+#         print(newDict[category])
+#
+#
+#     # return
+#
+# # print(makeDict(csv_text))
+# print(removeFirstIndex(csv_text))
 
 def main(string):
     listWithGroups = group(string)
