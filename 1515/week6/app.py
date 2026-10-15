@@ -5,16 +5,23 @@ dinner,roe,2 rolls,$3.95
 lunch,bento box a - chicken teriyaki,box combo,$8.59
 dessert,cheesecake,1 slice,$8.00"""
 
+def parse_item(line):
+    category, name, quantity, price = line.split(",")
+    item = {
+        "name": name,
+        "quantity": quantity,
+        "price": price,
+    }
+    return category, item
+
 def main():
-    manu = {}
+    menu = {}
     for line in csv_text.split("\n"):
-        category, item = parse_items(line)
+        category, item = parse_item(line)
         if category in menu:
             menu[category].append(item)
         else:
             menu[category] = [item]
-
-    # TODO: format groupings into a pretty menu str
-    # TODO: print the pretty menu
+    print(menu)
 
 main()
