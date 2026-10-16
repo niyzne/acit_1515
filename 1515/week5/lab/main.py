@@ -9,6 +9,8 @@ def main(text):
         print(f"\n* {mealType.capitalize()} Items *")
         for i in range(len(organizeDict[mealType])):
             price = (float(organizeDict[mealType][i]['price'].replace('$', ''))) * 1.8
-            print(f"${price:.2f} {organizeDict[mealType][i]['foodName']} {organizeDict[mealType][i]['amount']}")
+            food = organizeDict[mealType][i]['foodName']
+            amount = organizeDict[mealType][i]['amount']
+            print(f"${price:.2f} {food}, {amount}")
 
 main(menu_data.csv_text)
