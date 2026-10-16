@@ -12,7 +12,7 @@ lunch,bento box a - chicken teriyaki,box combo,$8.59
 dessert,cheesecake,1 slice,$8.00"""
 
 def getDict(longString):
-    listOfThings = csv_text.split('\n')
+    listOfThings = longString.split('\n')
     newList = []
     for row in listOfThings:
         bitsOfRow = row.split(",")
