@@ -41,6 +41,7 @@ def main():
         elif userChoice == "4":
             messages.goodbye()
             break
+            # exit() ?
         else:
             messages.invalidInput()
 
