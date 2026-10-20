@@ -14,3 +14,6 @@ def goodbye():
 
 def songNotFound():
     print(f'{colors["red"]}404 - Song Not Found{colors["reset"]}')
+
+def songNotFound():
+    print(f'{colors["red"]}404 - Song library not found{colors["reset"]}')
