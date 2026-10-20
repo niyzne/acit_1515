@@ -42,6 +42,17 @@ def songDurationFunc(songDurationChoice):
         else:
             return messages.invalidInput()
 
+def mostPlayedSong(songs):
+    most_plays = 0
+    best_song = None
+
+    for dictionary in songs:
+        plays = dictionary["plays"]
+        if plays > most_plays:
+            most_plays = plays
+            best_song = dictionary
+    return most_plays, best_song
+
 # def add_song
 def add_song():
     songTitle = input("Enter song title: ")
@@ -60,20 +71,9 @@ def record_listen():
             song["plays"] += 1
         messages.songNotFound()
 
-def mostPlayedSong(songs):
-    most_plays = 0
-    best_song = None
-
-    for dictionary in songs:
-        plays = dictionary["plays"]
-        if plays > most_plays:
-            most_plays = plays
-            best_song = dictionary
-    return most_plays, best_song
-
 # def generate_wrapped
 def generate_wrapped():
-    if songs not "":
+    if songs:
         return f"""
         ========== YOUR SPOTIFY WRAPPED ==========
 
