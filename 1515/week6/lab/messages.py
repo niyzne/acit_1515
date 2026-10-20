@@ -11,3 +11,6 @@ def invalidInput():
 
 def goodbye():
     print(f'{colors["blue"]}Have a good day{colors["reset"]}')
+
+def songNotFound():
+    print(f'{colors["red"]}404 - Song Not Found{colors["reset"]}')

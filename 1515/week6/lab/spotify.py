@@ -28,11 +28,11 @@ def add_song():
 # def record_listen
 def record_listen():
     songTitle = input("Enter song title: ")
-    if 
-    # Search through the list and increase the matching song's play count by 1.
-    # If the song doesn't exist, display an error message.
+    for song in songs:
+        if songTitle == song["title"]:
+            song["plays"] += 1
+        messages.songNotFound()
 
 # def generate_wrapped
 def generate_wrapped():
-    pass
-    # return f"========== YOUR SPOTIFY WRAPPED ==========\n\nTotal Songs: {len(students)}\nTotal Plays: {smth}\nTotal Listening Time: {smth} minutes\n\nYour Most Played Song:\n{song} - {artist} ({nuber of plays} plays)\n\n=========================================="
+    return f"========== YOUR SPOTIFY WRAPPED ==========\n\nTotal Songs: {len(students)}\nTotal Plays: {smth}\nTotal Listening Time: {smth} minutes\n\nYour Most Played Song:\n{song} - {artist} ({nuber of plays} plays)\n\n=========================================="
