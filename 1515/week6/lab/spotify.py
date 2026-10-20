@@ -5,6 +5,29 @@ import messages
 
 # This file should define and implement the following functions:
 
+# songs = [
+#     {
+#         "title": "Blinding Lights",
+#         "artist": "The Weeknd",
+#         "duration": 200,
+#         "plays": 5
+#     },
+#     {
+#         "title": "Numb",
+#         "artist": "Linkin Park",
+#         "duration": 187,
+#         "plays": 8
+#     },
+#     {
+#         "title": "Shape of You",
+#         "artist": "Ed Sheeran",
+#         "duration": 234,
+#         "plays": 3
+#     }
+# ]
+
+songs = []
+
 def songDurationFunc(songDurationChoice):
     if songDurationChoice == "1":
         songDuration = int(input("Enter duration (minutes): "))
@@ -35,4 +58,15 @@ def record_listen():
 
 # def generate_wrapped
 def generate_wrapped():
-    return f"========== YOUR SPOTIFY WRAPPED ==========\n\nTotal Songs: {len(students)}\nTotal Plays: {smth}\nTotal Listening Time: {smth} minutes\n\nYour Most Played Song:\n{song} - {artist} ({nuber of plays} plays)\n\n=========================================="
+    return f"""
+    ========== YOUR SPOTIFY WRAPPED ==========
+
+    Total Songs: {len(students)}
+    Total Plays: {smth}
+    Total Listening Time: {smth seconds / 60} minutes
+
+    Your Most Played Song:
+    {song} - {artist} ({nuber of plays} plays)
+
+    ==========================================
+    """
