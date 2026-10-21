@@ -124,22 +124,8 @@ Your Most Played Song:
 
 ==========================================
         {messages.colors["reset"]}""")
-        # Numb - Linkin Park (8 plays)
     else:
         messages.songNotFound()
-
-
-
-# def mostPlayedSong(songs):
-#     most_plays = 0
-#     best_song = None
-#
-#     for dictionary in songs:
-#         plays = dictionary["plays"]
-#         if plays > most_plays:
-#             most_plays = plays
-#             best_song = dictionary
-#     return most_plays, best_song
 
 #     {
 #         "title": "Shape of You",
