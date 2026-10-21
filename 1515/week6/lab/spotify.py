@@ -31,13 +31,23 @@ songs = []
 def songDurationFunc(songDurationChoice):
     while True:
         if songDurationChoice == "1":
-            songDurationMin = int(input("Enter duration (minutes): "))
+            songDurationMin = input("Enter duration (minutes): ")
             songDurationMin.strip()
+            while True:
+                if songDurationMin.isnumeric():
+                    songDurationMin = int(songDurationMin)
+                    break
+                messages.invalidInput()
             songDurationSec = songDurationMin * 60
             return songDurationSec
         elif songDurationChoice == "2":
-            songDurationSec = int(input("Enter duration (seconds): "))
+            songDurationSec = input("Enter duration (seconds): ")
             songDurationSec.strip()
+            while True:
+                if songDurationSec.isnumeric():
+                    songDurationSec = int(songDurationSec)
+                    break
+                messages.invalidInput()
             return songDurationSec
         else:
             messages.invalidInput()
@@ -52,16 +62,16 @@ def totalSongs(songs):
 
 def totalPlays(songs):
     totalPlays = 0
-    for i in songs:
-        if "plays" in i:
-            totalPlays += songs["plays"]
+    for dictionary in songs:
+        if "plays" in dictionary:
+            totalPlays += dictionary["plays"]
 
     return totalPlays
 
 def totalListeningTimeInSec(songs):
     totalListeningTime = 0
-    for i in songs:
-        if "duration" in i:
+    for dictionary in songs:
+        if "duration" in dictionary:
             totalPlays += songs["duration"]
 
     return totalListeningTime
@@ -85,7 +95,8 @@ def add_song():
     songDurationSec = songDurationFunc(songDurationChoice)
     songPlays = 0
 
-    return {"title":songTitle,"artist":songArtist,"duration":songDurationSec,"plays":songPlays}
+    newSong = {"title":songTitle,"artist":songArtist,"duration":songDurationSec,"plays":songPlays}
+    songs.append(newSong)
 
 # def record_listen
 def record_listen():
