@@ -124,10 +124,13 @@ def record_listen():
         messages.songNotFound()
     else:
         songTitle = input("Enter song title: ")
+        songTitle.strip().lower()
+        songTitle = titling(songTitle)
         for song in songs:
             if songTitle == song["title"]:
                 song["plays"] += 1
-            messages.songNotFound()
+            else:
+                messages.songNotFound()
 
 # def generate_wrapped
 def generate_wrapped():
@@ -146,21 +149,3 @@ Your Most Played Song:
         {messages.colors["reset"]}""")
     else:
         messages.songNotFound()
-
-#     {
-#         "title": "Shape of You",
-#         "artist": "Ed Sheeran",
-#         "duration": 234,
-#         "plays": 3
-#     }
-
-# ========== YOUR SPOTIFY WRAPPED ==========
-#
-# Total Songs: 3
-# Total Plays: 16
-# Total Listening Time: 52 minutes
-#
-# Your Most Played Song:
-# Numb - Linkin Park (8 plays)
-#
-# ==========================================
