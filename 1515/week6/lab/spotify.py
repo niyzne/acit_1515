@@ -40,7 +40,7 @@ def songDurationFunc(songDurationChoice):
             songDurationSec.strip()
             return songDurationSec
         else:
-            return messages.invalidInput()
+            messages.invalidInput()
 
 def totalSongs(songs):
     totalSongs = 0
@@ -89,11 +89,14 @@ def add_song():
 
 # def record_listen
 def record_listen():
-    songTitle = input("Enter song title: ")
-    for song in songs:
-        if songTitle == song["title"]:
-            song["plays"] += 1
+    if not songs:
         messages.songNotFound()
+    else:
+        songTitle = input("Enter song title: ")
+        for song in songs:
+            if songTitle == song["title"]:
+                song["plays"] += 1
+            messages.songNotFound()
 
 # def generate_wrapped
 def generate_wrapped():
@@ -111,7 +114,7 @@ def generate_wrapped():
         ==========================================
         """
     else:
-        return messages.songNotFound()
+        messages.songNotFound()
 
 # ========== YOUR SPOTIFY WRAPPED ==========
 #
