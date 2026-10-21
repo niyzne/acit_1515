@@ -28,6 +28,8 @@ import messages
 
 songs = []
 
+lowercase_words = ["a", "an", "the", "and", "but", "or", "as", "at", "by", "for", "in", "of", "on", "to", "vs"]
+
 def songDurationFunc(songDurationChoice):
     while True:
         if songDurationChoice == "1":
@@ -87,10 +89,28 @@ def mostPlayedSong(songs):
             best_song = dictionary
     return most_plays, best_song
 
+def titling(words):
+    wordList = words.split()
+    newString = []
+    for word in wordList:
+        if word in lowercase_words:
+            newString.append(word)
+        else:
+            if isinstance(word, str):
+                newString.append(word.capitalize())
+            else:
+                newString.append(word)
+
+    return " ".join(newString)
+
 # def add_song
 def add_song():
     songTitle = input("Enter song title: ")
+    songTitle.strip().lower()
+    songTitle = titling(songTitle)
     songArtist = input("Enter artist: ")
+    songArtist.strip().lower()
+    songArtist = titling(songArtist)
     songDurationChoice = input("Enter duration\n[1] minutes\n[2] seconds\nEnter mode: ")
     songDurationSec = songDurationFunc(songDurationChoice)
     songPlays = 0
