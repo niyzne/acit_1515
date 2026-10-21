@@ -72,7 +72,7 @@ def totalListeningTimeInSec(songs):
     totalListeningTime = 0
     for dictionary in songs:
         if "duration" in dictionary:
-            totalPlays += songs["duration"]
+            totalListeningTime += dictionary["duration"]
 
     return totalListeningTime
 
@@ -82,7 +82,7 @@ def mostPlayedSong(songs):
 
     for dictionary in songs:
         plays = dictionary["plays"]
-        if plays > most_plays:
+        if plays >= most_plays:
             most_plays = plays
             best_song = dictionary
     return most_plays, best_song
@@ -112,20 +112,41 @@ def record_listen():
 # def generate_wrapped
 def generate_wrapped():
     if songs:
-        return f"""
-        ========== YOUR SPOTIFY WRAPPED ==========
+        print(f"""{messages.colors["yellow"]}
+========== YOUR SPOTIFY WRAPPED ==========
 
-        Total Songs: {totalSongs(songs)}
-        Total Plays: {totalPlays(songs)}
-        Total Listening Time: {(totalListeningTimeInSec(songs)) / 60} minutes
+Total Songs: {totalSongs(songs)}
+Total Plays: {totalPlays(songs)}
+Total Listening Time: {((totalListeningTimeInSec(songs)) / 60):.2f} minutes
 
-        Your Most Played Song:
-        {mostPlayedSong(songs)[1]["title"]} - {mostPlayedSong(songs)[1]["artist"]} ({mostPlayedSong(songs)[0]} plays)
+Your Most Played Song:
+{mostPlayedSong(songs)[1]["artist"]} - {mostPlayedSong(songs)[1]["title"]} ({mostPlayedSong(songs)[0]} plays)
 
-        ==========================================
-        """
+==========================================
+        {messages.colors["reset"]}""")
+        # Numb - Linkin Park (8 plays)
     else:
         messages.songNotFound()
+
+
+
+# def mostPlayedSong(songs):
+#     most_plays = 0
+#     best_song = None
+#
+#     for dictionary in songs:
+#         plays = dictionary["plays"]
+#         if plays > most_plays:
+#             most_plays = plays
+#             best_song = dictionary
+#     return most_plays, best_song
+
+#     {
+#         "title": "Shape of You",
+#         "artist": "Ed Sheeran",
+#         "duration": 234,
+#         "plays": 3
+#     }
 
 # ========== YOUR SPOTIFY WRAPPED ==========
 #
