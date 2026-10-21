@@ -42,6 +42,30 @@ def songDurationFunc(songDurationChoice):
         else:
             return messages.invalidInput()
 
+def totalSongs(songs):
+    totalSongs = 0
+    for i in songs:
+        if "title" in i:
+            totalSongs += 1
+
+    return totalSongs
+
+def totalPlays(songs):
+    totalPlays = 0
+    for i in songs:
+        if "plays" in i:
+            totalPlays += songs["plays"]
+
+    return totalPlays
+
+def totalListeningTimeInSec(songs):
+    totalListeningTime = 0
+    for i in songs:
+        if "duration" in i:
+            totalPlays += songs["duration"]
+
+    return totalListeningTime
+
 def mostPlayedSong(songs):
     most_plays = 0
     best_song = None
@@ -77,9 +101,9 @@ def generate_wrapped():
         return f"""
         ========== YOUR SPOTIFY WRAPPED ==========
 
-        Total Songs: {sum(1 for i in songs if "title" in i)}
-        Total Plays: {sum(1 for i in songs if "title" in i.values())}
-        Total Listening Time: {(sum(1 for i in songs if "duration" in i.values())) / 60} minutes
+        Total Songs: {totalSongs(songs)}
+        Total Plays: {totalPlays(songs)}
+        Total Listening Time: {(totalListeningTimeInSec(songs)) / 60} minutes
 
         Your Most Played Song:
         {mostPlayedSong(songs)[1]["title"]} - {mostPlayedSong(songs)[1]["artist"]} ({mostPlayedSong(songs)[0]} plays)
