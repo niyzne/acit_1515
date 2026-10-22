@@ -1,8 +1,5 @@
 import spotify
 import messages
-# ================================
-# == LAB NOT DONE AT THE MOMENT ==
-# ================================
 
 def main():
     while True:
