@@ -53,6 +53,7 @@ def songDurationFunc(songDurationChoice):
             return songDurationSec
         else:
             messages.invalidInput()
+            return
 
 def totalSongs(songs):
     totalSongs = 0
@@ -129,6 +130,7 @@ def record_listen():
         for song in songs:
             if songTitle == song["title"]:
                 song["plays"] += 1
+
             else:
                 messages.songNotFound()
 
