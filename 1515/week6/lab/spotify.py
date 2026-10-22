@@ -169,7 +169,6 @@ def record_listen():
         for song in songs:
             if songTitle == song["title"]:
                 song["plays"] += 1
-
             else:
                 messages.songNotFound()
 
