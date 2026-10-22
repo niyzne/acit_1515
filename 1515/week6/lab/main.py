@@ -4,8 +4,6 @@ import messages
 # == LAB NOT DONE AT THE MOMENT ==
 # ================================
 
-mode = ["Add Song", "Record Listen", "Generate Wrapped"]
-
 def main():
     while True:
         userChoice = input(f"""{messages.colors["white"]}====== SPOTIFY WRAPPED ======
