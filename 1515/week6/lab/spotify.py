@@ -109,7 +109,7 @@ def totalListeningTimeInSec(songs):
     totalListeningTime = 0
     for dictionary in songs:
         if "duration" in dictionary:
-            totalListeningTime += dictionary["duration"]
+            totalListeningTime += dictionary["duration"] * dictionary["plays"]
 
     return totalListeningTime
 
