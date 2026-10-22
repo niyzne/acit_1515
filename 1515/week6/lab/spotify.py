@@ -42,7 +42,9 @@ def songDurationFunc(songDurationChoice):
                 if songDurationMin.isnumeric():
                     songDurationMin = int(songDurationMin)
                     break
-                messages.invalidInput()
+                else:
+                    messages.invalidInput()
+                    return
             songDurationSec = songDurationMin * 60
             return songDurationSec
 
@@ -53,7 +55,9 @@ def songDurationFunc(songDurationChoice):
                 if songDurationSec.isnumeric():
                     songDurationSec = int(songDurationSec)
                     break
-                messages.invalidInput()
+                else:
+                    messages.invalidInput()
+                    return
             return songDurationSec
 
         elif songDurationChoice == "3":
@@ -63,7 +67,9 @@ def songDurationFunc(songDurationChoice):
                 if songDurationInMin.isnumeric():
                     songDurationInMin = int(songDurationInMin)
                     break
-                messages.invalidInput()
+                else:
+                    messages.invalidInput()
+                    return
             songDurationInSecPart1 = songDurationInMin * 60
 
             songDurationInSec = input("Enter duration (seconds): ")
@@ -72,7 +78,9 @@ def songDurationFunc(songDurationChoice):
                 if songDurationInSec.isnumeric():
                     songDurationInSec = int(songDurationInSec)
                     break
-                messages.invalidInput()
+                else:
+                    messages.invalidInput()
+                    return
             songDurationInSecPart2 = songDurationInSec
             songDurationSec = songDurationInSecPart1 + songDurationInSecPart2
             return songDurationSec
@@ -142,8 +150,13 @@ def add_song():
     songArtist.strip().lower()
     songArtist = titling(songArtist)
 
-    songDurationChoice = input("Enter duration\n[1] minutes\n[2] seconds\n[3] minutes and seconds\nEnter mode: ")
-    songDurationSec = songDurationFunc(songDurationChoice)
+    while True:
+        songDurationChoice = input("Enter duration\n[1] minutes\n[2] seconds\n[3] minutes and seconds\nEnter mode: ")
+        if songDurationChoice == "1" or songDurationChoice == "2" or songDurationChoice == "3":
+            songDurationSec = songDurationFunc(songDurationChoice)
+            break
+        else:
+            messages.invalidInput()
 
     songPlays = 0
     print(f"""{messages.colors["green"]}======= Song Added =======
@@ -166,11 +179,14 @@ def record_listen():
         songTitle = input("Enter song title: ")
         songTitle.strip().lower()
         songTitle = titling(songTitle)
+        found = False
         for song in songs:
             if songTitle == song["title"]:
                 song["plays"] += 1
-            else:
-                messages.songNotFound()
+                messages.songRecorded()
+                found = True
+        if not found:
+            messages.songNotFound()
 
 # def generate_wrapped
 def generate_wrapped():

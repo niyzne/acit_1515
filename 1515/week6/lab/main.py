@@ -8,16 +8,6 @@ mode = ["Add Song", "Record Listen", "Generate Wrapped"]
 
 def main():
     while True:
-#         userChoice = input(f"""{messages.colors["white"]}====== SPOTIFY WRAPPED ======
-#
-# 1. Add a song
-# 2. Record a listen
-# 3. Generate Spotify Wrapped
-# 4. Exit
-#
-# Enter your choice: {messages.colors["reset"]}""")
-
-
         userChoice = input(f"""{messages.colors["white"]}====== SPOTIFY WRAPPED ======
 
 [1] Add a song
