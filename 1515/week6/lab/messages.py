@@ -3,6 +3,7 @@ colors = {
     "green": "\033[92m",
     "yellow": "\033[93m",
     "blue": "\033[94m",
+    "white": "\033[97m",
     "reset": "\033[0m"
 }
 
@@ -14,7 +15,7 @@ def invalidInput():
 def songNotFound():
     print(f'{colors["red"]}404 - Song Not Found{colors["reset"]}')
 
-def songNotFound():
+def songLibraryNotFound():
     print(f'{colors["red"]}404 - Song library not found{colors["reset"]}')
 
 # statement (blue)

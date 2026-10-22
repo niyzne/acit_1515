@@ -30,9 +30,12 @@ songs = []
 
 lowercase_words = ["a", "an", "the", "and", "but", "or", "as", "at", "by", "for", "in", "of", "on", "to", "vs"]
 
+mode = ["Add Song", "Record Listen", "Generate Wrapped"]
+
 def songDurationFunc(songDurationChoice):
     while True:
         if songDurationChoice == "1":
+
             songDurationMin = input("Enter duration (minutes): ")
             songDurationMin.strip()
             while True:
@@ -42,6 +45,7 @@ def songDurationFunc(songDurationChoice):
                 messages.invalidInput()
             songDurationSec = songDurationMin * 60
             return songDurationSec
+
         elif songDurationChoice == "2":
             songDurationSec = input("Enter duration (seconds): ")
             songDurationSec.strip()
@@ -51,6 +55,28 @@ def songDurationFunc(songDurationChoice):
                     break
                 messages.invalidInput()
             return songDurationSec
+
+        elif songDurationChoice == "3":
+            songDurationInMin = input("Enter duration (minutes): ")
+            songDurationInMin.strip()
+            while True:
+                if songDurationInMin.isnumeric():
+                    songDurationInMin = int(songDurationInMin)
+                    break
+                messages.invalidInput()
+            songDurationInSecPart1 = songDurationInMin * 60
+
+            songDurationInSec = input("Enter duration (seconds): ")
+            songDurationInSec.strip()
+            while True:
+                if songDurationInSec.isnumeric():
+                    songDurationInSec = int(songDurationInSec)
+                    break
+                messages.invalidInput()
+            songDurationInSecPart2 = songDurationInSec
+            songDurationSec = songDurationInSecPart1 + songDurationInSecPart2
+            return songDurationSec
+
         else:
             messages.invalidInput()
             return
@@ -106,15 +132,27 @@ def titling(words):
 
 # def add_song
 def add_song():
+    print(f"{messages.colors["green"]}Mode Selected: {mode[0]}{messages.colors["reset"]}")
+
     songTitle = input("Enter song title: ")
     songTitle.strip().lower()
     songTitle = titling(songTitle)
+
     songArtist = input("Enter artist: ")
     songArtist.strip().lower()
     songArtist = titling(songArtist)
-    songDurationChoice = input("Enter duration\n[1] minutes\n[2] seconds\nEnter mode: ")
+
+    songDurationChoice = input("Enter duration\n[1] minutes\n[2] seconds\n[3] minutes and seconds\nEnter mode: ")
     songDurationSec = songDurationFunc(songDurationChoice)
+
     songPlays = 0
+    print(f"""{messages.colors["green"]}======= Song Added =======
+
+Song: {songTitle}
+Artist: {songArtist}
+Song Duration: {(songDurationSec / 60):.2f} minutes
+
+==========================={messages.colors["reset"]}""")
 
     newSong = {"title":songTitle,"artist":songArtist,"duration":songDurationSec,"plays":songPlays}
     songs.append(newSong)
@@ -122,8 +160,9 @@ def add_song():
 # def record_listen
 def record_listen():
     if not songs:
-        messages.songNotFound()
+        messages.songLibraryNotFound()
     else:
+        print(f"{messages.colors["green"]}Mode Selected: {mode[1]}{messages.colors["reset"]}")
         songTitle = input("Enter song title: ")
         songTitle.strip().lower()
         songTitle = titling(songTitle)
@@ -150,4 +189,4 @@ Your Most Played Song:
 ==========================================
         {messages.colors["reset"]}""")
     else:
-        messages.songNotFound()
+        messages.songLibraryNotFound()
