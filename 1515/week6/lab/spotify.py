@@ -167,9 +167,11 @@ def record_listen():
 
 # def generate_wrapped
 def generate_wrapped():
-    if songs:
-        print(f"""{messages.colors["yellow"]}
-========== YOUR SPOTIFY WRAPPED ==========
+    if totalListeningTimeInSec(songs) == 0:
+        messages.songLibraryNotFound()
+    else:
+        if songs:
+            print(f"""{messages.colors["yellow"]}========== YOUR SPOTIFY WRAPPED ==========
 
 Total Songs: {totalSongs(songs)}
 Total Plays: {totalPlays(songs)}
@@ -178,7 +180,6 @@ Total Listening Time: {((totalListeningTimeInSec(songs)) / 60):.2f} minutes
 Your Most Played Song:
 {mostPlayedSong(songs)[1]["artist"]} - {mostPlayedSong(songs)[1]["title"]} ({mostPlayedSong(songs)[0]} plays)
 
-==========================================
-        {messages.colors["reset"]}""")
-    else:
-        messages.songLibraryNotFound()
+=========================================={messages.colors["reset"]}""")
+        else:
+            messages.songLibraryNotFound()
