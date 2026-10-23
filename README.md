@@ -41,3 +41,17 @@
 - [Practice Lab](1515/week4/lab/practice_lab.md)
 
 ---
+## Week 5 Lab
+
+- [main.py](1515/week5/lab/main.py)
+- [menu_data.py](1515/week5/lab/menu_data.py)
+- [week_5_lab.md](1515/week5/lab/week_5_lab.md)
+
+---
+## Week 6 Lab
+
+- [main.py](1515/week6/lab/main.py)
+- [messages.py](1515/week6/lab/messages.py)
+- [spotify.py](1515/week6/lab/spotify.py)
+
+---

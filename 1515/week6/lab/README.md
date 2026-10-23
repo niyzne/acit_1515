@@ -1,3 +1,0 @@
-# Week 6 lab
-
-- CURRENTLY NOT DONE
