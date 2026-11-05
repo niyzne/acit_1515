@@ -1,7 +1,7 @@
 # TODO: Try to Write a file
 file = open("bcit.txt", "w")
 file.write("hello")
-# file.close()
+file.close()
 
 # TODO: Try to Read a file
 file = open("bcit.txt", "r")
