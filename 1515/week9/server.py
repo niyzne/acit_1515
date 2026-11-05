@@ -1,10 +1,6 @@
-# TODO: Try to Write a file
-with open("bcit.txt", "w") as file:
-    file.write("hello")
+# import pathlib as Path
+from pathlib import Path
 
-# TODO: Try to Read a file
-with open("bcit.txt", "r") as file:
-    data = file.read()
-
+Path("bcit.txt").write_text("hello")
+data = Path("bcit.txt").read_text()
 print(data)
-print(type(data))
