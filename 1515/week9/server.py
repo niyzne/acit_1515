@@ -1,12 +1,10 @@
 # TODO: Try to Write a file
-file = open("bcit.txt", "w")
-file.write("hello")
-file.close()
+with open("bcit.txt", "w") as file:
+    file.write("hello")
 
 # TODO: Try to Read a file
-file = open("bcit.txt", "r")
-data = file.read()
-file.close()
+with open("bcit.txt", "r") as file:
+    data = file.read()
 
 print(data)
 print(type(data))
