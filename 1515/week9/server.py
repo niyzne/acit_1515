@@ -1,7 +1,12 @@
-# import pathlib as Path
-from pathlib import Path
+from http.server import HTTPServer, BaseHTTPRequestHandler
 
-Path("bcit.txt").write_text("hello")
-Path("bcit.txt").write_text("bcit")
-data = Path("bcit.txt").read_text()
-print(data)
+# TODO: Create a function to handle the request
+class Handler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header("Content-Type", "text/plain")
+        self.end_headers()
+        self.wfile.write(b"Hello from BCIT")
+
+server = HTTPServer(("localhost", 4000), Handler)
+server.serve_forever()
