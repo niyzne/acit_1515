@@ -1,14 +1,19 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
+from pathlib import Path
 
-# TODO: Create a function to handle the request
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
-        # self.send_header("Content-Type", "text/plain")
         self.send_header("Content-Type", "text/html")
         self.end_headers()
-        # self.wfile.write(b"Hello from BCIT")
-        self.wfile.write(b"<h1>Hello from BCIT</h1>")
+        if self.path == "/":
+            html = Path("index.html").read_text()
+            actualConversion = 'hi'
+            html.replace("{ TEMPERATURE_CONVERSION_HERE }", actualConversion)
+            self.wfile.write(html.encode())
+        elif self.path == "/contact":
+            html = Path("contact.html").read_text()
+            self.wfile.write(html.encode())
 
 server = HTTPServer(("localhost", 4000), Handler)
 server.serve_forever()
