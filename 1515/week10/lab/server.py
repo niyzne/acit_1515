@@ -11,8 +11,18 @@ moves = 0
 def move_player(direction):
     global player, moves
 
-    pass
-
+    if direction == "up" and player[1] != 0:
+        player[1] -= 1
+        moves += 1
+    elif direction == "down" and player[1] != 4:
+        player[1] += 1
+        moves += 1
+    elif direction == "left" and player[0] != 0:
+        player[0] -= 1
+        moves += 1
+    elif direction == "right" and player[0] != 4:
+        player[0] += 1
+        moves += 1
 
 def found_treasure():
     pass
