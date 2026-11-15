@@ -8,7 +8,6 @@ player = [0, 0]
 treasure = [3, 2]
 moves = 0
 
-
 def move_player(direction):
     global player, moves
 
