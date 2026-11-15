@@ -36,7 +36,10 @@ def reset_game():
 
     player = [0, 0]
     moves = 0
+
     treasure = [random.randint(0, 4), random.randint(0, 4)]
+    while treasure == [0, 0]:
+        treasure = [random.randint(0, 4), random.randint(0, 4)]
 
 def get_game_state():
     return {
