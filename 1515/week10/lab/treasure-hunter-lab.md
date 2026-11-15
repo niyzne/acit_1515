@@ -647,13 +647,213 @@ When you are finished, paste your complete solution (html and python) into the b
 server.py
 
 ```python
+import json
+from http.server import BaseHTTPRequestHandler, HTTPServer
+from pathlib import Path
+from urllib.parse import parse_qs, urlparse
+import random
 
+player = [0, 0]
+treasure = [3, 2]
+moves = 0
+
+def move_player(direction):
+    global player, moves
+
+    if not (found_treasure() or is_game_over()):
+        if direction == "up" and player[1] != 0 and moves != 10:
+            player[1] -= 1
+            moves += 1
+        elif direction == "down" and player[1] != 4 and moves != 10:
+            player[1] += 1
+            moves += 1
+        elif direction == "left" and player[0] != 0 and moves != 10:
+            player[0] -= 1
+            moves += 1
+        elif direction == "right" and player[0] != 4 and moves != 10:
+            player[0] += 1
+            moves += 1
+
+def found_treasure():
+    return True if player == treasure else False
+
+def is_game_over():
+    return True if found_treasure() or moves == 10 else False
+
+def reset_game():
+    global player, moves, treasure
+
+    player = [0, 0]
+    moves = 0
+
+    treasure = [random.randint(0, 4), random.randint(0, 4)]
+    while treasure == [0, 0]:
+        treasure = [random.randint(0, 4), random.randint(0, 4)]
+
+def get_game_state():
+    return {
+        "player": player,
+        "found": found_treasure(),
+        "moves": moves,
+        "game_over": is_game_over(),
+    }
+
+
+class MyHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        url = urlparse(self.path)
+
+        if url.path == "/":
+            html = Path("index.html").read_text(encoding="utf-8")
+
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.end_headers()
+            self.wfile.write(html.encode("utf-8"))
+
+        elif url.path == "/move":
+            direction = parse_qs(url.query).get("direction", [""])[0]
+            # Note from Armaan: If you're confused about the above line of code...
+            # url.query -> "direction=up"
+            # parse_qs(url.query) -> {"direction": ["up"]}
+            # parse_qs(url.query).get("direction", [""]) -> ["up"]
+            # parse_qs(url.query).get("direction", [""])[0] -> "up"
+
+            move_player(direction)
+
+            data = get_game_state()
+
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.end_headers()
+            self.wfile.write(json.dumps(data).encode())
+
+        elif url.path == "/reset":
+            reset_game()
+
+            data = get_game_state()
+
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.end_headers()
+            self.wfile.write(json.dumps(data).encode())
+
+
+server = HTTPServer(("localhost", 3000), MyHandler)
+print("Server running at http://localhost:3000")
+server.serve_forever()
 ```
 
 index.html (probably nothing has changed, but paste anyways)
 
 ```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Treasure Hunt</title>
 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #grid {
+            display: grid;
+            grid-template-columns: repeat(5, 50px);
+            gap: 5px;
+        }
+
+        .cell {
+            width: 50px;
+            height: 50px;
+            background: lightgray;
+            display: grid;
+            place-items: center;
+            font-size: 24px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Treasure Hunt</h1>
+
+    <p>Find the hidden treasure in 10 moves or less!</p>
+
+    <div id="grid"></div>
+
+    <p>Moves: <span id="moves">0</span> / 10</p>
+
+    <div>
+        <button onclick="move('up')">↑</button>
+        <button onclick="move('down')">↓</button>
+        <button onclick="move('left')">←</button>
+        <button onclick="move('right')">→</button>
+    </div>
+
+    <p id="message"></p>
+
+    <button onclick="resetGame()">Restart Game</button>
+
+    <script>
+        function draw(player) {
+            const grid = document.querySelector("#grid");
+            grid.innerHTML = "";
+
+            for (let y = 0; y < 5; y++) {
+                for (let x = 0; x < 5; x++) {
+                    const cell = document.createElement("div");
+                    cell.className = "cell";
+
+                    if (player[0] === x && player[1] === y) {
+                        cell.textContent = "🙂";
+                    }
+
+                    grid.appendChild(cell);
+                }
+            }
+        }
+
+        function updateGame(data) {
+            draw(data.player);
+
+            document.querySelector("#moves").textContent = data.moves;
+
+            const message = document.querySelector("#message");
+
+            if (data.found) {
+                message.textContent = "🎉 You found the treasure!";
+            } else if (data.game_over) {
+                message.textContent = "💀 Game over! You ran out of moves.";
+            } else {
+                message.textContent = "";
+            }
+        }
+
+        async function move(direction) {
+            const response = await fetch(`/move?direction=${direction}`);
+            const data = await response.json();
+
+            updateGame(data);
+        }
+
+        async function resetGame() {
+            const response = await fetch("/reset");
+            const data = await response.json();
+
+            updateGame(data);
+        }
+
+        draw([0, 0]);
+    </script>
+</body>
+</html>
 ```
 
 ---
