@@ -55,7 +55,7 @@
 - [spotify.py](1515/week6/lab/spotify.py)
 
 ---
-## Week 7 Lab
+## Week 10 Lab
 
 - [treasure-hunter-lab.md](1515/week10/lab/treasure-hunter-lab.md)
 - [server.py](1515/week10/lab/server.py)
