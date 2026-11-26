@@ -67,6 +67,6 @@
 
 - [coding-tips-lab.md](1515/week11/lab/coding-tips-lab.md)
 - [app.py](1515/week11/lab/flask-tips-lab/app.py)
-- [index.html](1515/week10/lab/flask-tips-lab/templates/index.html)
+- [index.html](1515/week11/lab/flask-tips-lab/templates/index.html)
 
 ---
