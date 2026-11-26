@@ -30,10 +30,11 @@ def index():
 @app.post("/tips")
 def add_tip():
     # TODO: Implement this yourself
-    if request.form["text"] != "":
+    text = request.form["text"].strip()
+    if text != "":
         tipDict = {
-            "id": str(uuid4()), 
-            "text": request.form["text"], 
+            "id": str(uuid4()),
+            "text": text,
             "likes": 0,
             "dislikes": 0
         }
