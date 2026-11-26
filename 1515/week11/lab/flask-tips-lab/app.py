@@ -51,7 +51,7 @@ def like_tip(tip_id):
     save_tips()
     return redirect("/")
 
-@app.post("/tips/<tip_id>/dislike") # added dislike function
+@app.post("/tips/<tip_id>/dislike") # added dislike function in html
 def dislike_tip(tip_id):
     # TODO: Implement this yourself
     for tip in tips:
