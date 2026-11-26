@@ -21,7 +21,7 @@ if DATA_FILE.exists():
 
 def save_tips():
     with open(DATA_FILE, "w") as file:
-        json.dump(tips, file)
+        json.dump(tips, file, indent=4)
 
 @app.get("/")
 def index():
